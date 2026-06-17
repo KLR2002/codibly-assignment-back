@@ -18,12 +18,10 @@ router.get('/mix', async (req, res) => {
         const response = await axios.get(`https://api.carbonintensity.org.uk/generation/${fromIso}/${toIso}`);
         const data = response.data.data;
 
-        // Group intervals by date
         const groupedByDate = {};
 
         data.forEach(interval => {
             // Grupujemy po dacie
-            console.log(interval)
             const dateStr = interval.from.split('T')[0];
             if (!groupedByDate[dateStr]) {
                 groupedByDate[dateStr] = {
