@@ -7,7 +7,7 @@ const CLEAN_ENERGY_SOURCES = ['biomass', 'nuclear', 'hydro', 'wind', 'solar'];
 router.get('/mix', async (req, res) => {
     try {
         const today = new Date();
-        today.setUTCHours(0, 0, 0, 0);
+        today.setUTCHours(0, 1, 0, 0);
         
         const threeDaysLater = new Date(today);
         threeDaysLater.setUTCDate(today.getUTCDate() + 3);
